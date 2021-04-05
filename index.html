@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this website is used to create qrcode">
+    <meta name="keywords" content="qrcode,qrcodegenerator,qrcodecreator,qr">
+    <meta name="theme-color" content="#000000"/>
+    <link rel="stylesheet" href="style.css">
+    <title>QRCode Generator</title>
+    <link rel="shortcut icon" href="img/logo192.png" type="image/png">
+    <script src="qrcode.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/logo192.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contain">
+        <h1>QRCode Generator</h1>
+        <input type="text" id="text" placeholder="enter here"><br>
+        <br><button onclick="generate()">generate</button>
+        <br>
+  <br><div id="canvas" ></div>
+        <button id="download" onclick="download()">download</button>
+        
+    </div>
+</div>
+    <script>
+function generate(){
+    const Text = document.getElementById("text");
+    if (Text.value ===""){
+        alert("enter any value")
+    }else{
+    document.getElementById("canvas").innerHTML="";
+    new QRCode(document.getElementById("canvas"), Text.value)
+    }
+}
+
+
+   function download(){
+       const img=document.querySelector("img")
+        const a=document.createElement("a");
+        img.append(a);
+        var date= Date.now()
+        a.download =`${date}.png`;
+        a.href=img.src;
+        a.click();
+        a.remove();       
+}
+
+</script>
+<script src="app.js"></script>
+</body>
+</html>
