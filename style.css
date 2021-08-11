@@ -73,3 +73,14 @@ button:hover {
         width: 370px;
     }
 }
+@media screen and (max-width:400px){
+
+.container{
+
+        width: 310px;
+
+    }
+
+}
+
+
