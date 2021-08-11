@@ -47,6 +47,8 @@ input::placeholder{
     text-transform: capitalize;
 }
 button{
+    height:39px;
+    width:104px;
     padding: 6px;
     text-transform: capitalize;
     margin-left: 92px;
@@ -68,6 +70,6 @@ button:hover {
 }
 @media screen and (max-width:500px){
     .container{
-        width: 350px;
+        width: 370px;
     }
 }
