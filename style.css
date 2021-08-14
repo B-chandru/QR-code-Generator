@@ -46,6 +46,9 @@ input{
 input::placeholder{
     text-transform: capitalize;
 }
+input:focus{
+    border-color:#0fadf54f;
+}
 button{
     height:39px;
     width:104px;
